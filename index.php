@@ -33,15 +33,8 @@
             <div class="navbar-inner">
                 <div class="container">
                     
-                    <a class="brand" href="http://ndelhaume.github.io/">ndelhaume.github.com</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="http://ndelhaume.github.com">GitHub Home</a></li>
-                            <li><a href="http://nicolasdelhaume.com">Personnal Website</a></li>
-
-                        </ul>
-                        
-                    </div><!--/.nav-collapse -->
+                    <a class="brand" href="http://ndelhaume.github.io/Easy-to-use-php-video-class">Easy-to-use Video Class</a>
+                    
                 </div>
             </div>
         </div>
@@ -109,13 +102,6 @@ echo $video->embed();</pre></p>
 
         <script src="js/main.js"></script>
 
-        <script>
-            var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-            (function(d, t) {
-                var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-                g.src = '//www.google-analytics.com/ga.js';
-                s.parentNode.insertBefore(g, s)
-            }(document, 'script'));
-        </script>
+        
     </body>
 </html>
