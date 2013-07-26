@@ -1,4 +1,4 @@
-Easy-to-use PHP Video Class
+[Easy-to-use PHP Video Class]
 ===========================
 
 An easy-to-use PHP class for videos from Youtube / Vimeo / DailyMotion websites
@@ -27,6 +27,12 @@ echo $video->embed();
 - More options to come
 
 
+## Quick start
+
+Three quick start options are available:
+
+* [Download the latest release](https://github.com/ndelhaume/Easy-to-use-php-video-class/zipball/master).
+* Clone the repo: `git clone git://github.com/ndelhaume/Easy-to-use-php-video-class.git`.
 
 
 ## Copyright and license
