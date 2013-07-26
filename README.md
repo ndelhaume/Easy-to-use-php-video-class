@@ -1,4 +1,4 @@
-[Easy-to-use PHP Video Class]
+[Easy-to-use PHP Video Class](https://github.com/ndelhaume/Easy-to-use-php-video-class/)
 ===========================
 
 An easy-to-use PHP class for videos from Youtube / Vimeo / DailyMotion websites
