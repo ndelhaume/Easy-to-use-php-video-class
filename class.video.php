@@ -8,11 +8,12 @@ if (defined('BASEPATH'))
  *
  * Various functions on popular video hosting platforms
  *
- * @author        	Nicolas Delhaume
+ * @author            Nicolas Delhaume
  * @created		      26/07/2013
  * @license         http://nicolasdelhaume.com
  * @link            n/a
  */
+ 
 class Video {
 
     /**
@@ -149,8 +150,8 @@ class Video {
 
         $site = file_get_contents("http://www.dailymotion.com/services/oembed?format=json&url=http://www.dailymotion.com/video/$id");
 
-        $convert = json_decode($site);
-        $thumbs = $convert->thumbnail_url;
+        $data = json_decode($site);
+        $thumbs = $data->thumbnail_url;
 
         if ($return == 'embed') {
             return '<iframe src="http://www.dailymotion.com/embed/video/' . $id . '" width="' . ($width ? $width : 560) . '" height="' . ($height ? $height : 349) . '" frameborder="0"></iframe>';
@@ -169,10 +170,10 @@ class Video {
      * @param $height  > default 349
      * @param $rel > default cigenerate
      */
-    private function get_youtube($id, $return = 'embed', $width = '', $height = '', $rel = "cigenerate") {
+    private function get_youtube($id, $return = 'embed', $width = '', $height = '') {
 
         if ($return == 'embed') {
-            $r = "<iframe src='http://www.youtube.com/embed/$id?rel=$rel' frameborder='0' width='" . ($width ? $width : 560) . "' height='" . ($height ? $height : 349) . "'></iframe>";
+            $r = "<iframe src='http://www.youtube.com/embed/$id?rel=0' frameborder='0' width='" . ($width ? $width : 560) . "' height='" . ($height ? $height : 349) . "'></iframe>";
             return $r;
         } else if ($return == 'thumb') {
             return 'http://i1.ytimg.com/vi/' . $id . '/default.jpg';
@@ -193,14 +194,24 @@ class Video {
     private function get_vimeo($id, $return = 'embed', $width = '', $height = '') {
 
         $site = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
-        $convert = json_decode($site);
-        $thumbs = $convert[0]->thumbnail_large;
+        $data = json_decode($site);
+        $thumbs = $data[0]->thumbnail_small;
+        $thumbhq = $data[0]->thumbnail_large;
+        $description = $data[0]->thumbnail_large;
+            
+        /* if you wish to get all the infos from the vimeo api, 
+         * just return $data[0]
+         */
 
         if ($return == 'embed') {
             $e = '<iframe src="http://player.vimeo.com/video/' . $id . '" width="' . ($width ? $width : 560) . '" height="' . ($height ? $height : 349) . '" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
             return $e;
-        } else if ($return == 'thumb' || $return == 'hqthumb') {
+        } else if ($return == 'description') {
+            return $description;
+        } else if ($return == 'thumb') {
             return $thumbs;
+        } else if ($return == 'hqthumb') {
+            return $thumbhq;
         } else {
             return $url;
         }
