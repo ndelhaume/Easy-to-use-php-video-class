@@ -139,12 +139,11 @@ class Video {
     }
 
     /**
-     * @package DailyMation Video parser 
-     * @param $id > youtube id
-     * @param $return >  default embed , thumb ,hqtgumb
-     * @param $width > default 560
-     * @param $height  > default 349
-     * @param $rel > default cigenerate
+     * @package Video utility 
+     * @param $id > video id
+     * @param $return >  default embed
+     * @param $width 
+     * @param $height  
      */
     private function get_dailymotion($id, $return = 'embed', $width = '', $height = '') {
 
@@ -163,12 +162,11 @@ class Video {
     }
 
     /**
-     * @package Youtube Video parser 
+     * @package Video utility 
      * @param $id > youtube id
-     * @param $return >  default embed , thumb ,hqtgumb
-     * @param $width > default 560
-     * @param $height  > default 349
-     * @param $rel > default cigenerate
+     * @param $return >  default embed 
+     * @param $width 
+     * @param $height  
      */
     private function get_youtube($id, $return = 'embed', $width = '', $height = '') {
 
@@ -185,11 +183,11 @@ class Video {
     }
 
     /**
-     * @package Youtube Video parser 
-     * @param $id > youtube id
-     * @param $return >  default embed , thumb ,hqtgumb
-     * @param $width > default 560
-     * @param $height  > default 349
+     * @package Video utility
+     * @param $id > video id
+     * @param $return >  default embed 
+     * @param $width 
+     * @param $height  
      */
     private function get_vimeo($id, $return = 'embed', $width = '', $height = '') {
 
